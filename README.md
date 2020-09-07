@@ -1,9 +1,11 @@
 # Autonomous Remote Control (ARC)
 ## Developed by Isaiah Knorr
  
-### Version 0.1a
+### Version 0.1a - 06 September 2020
+
 #### 06 September 2020
 Created Servo class to crontrol servo motors for steering, camera movement, etc.
+Uploaded initial version to Git
 #### 31 August 2020
 Improved class structure and OOP
 Improved Servo functionality and auto center 
