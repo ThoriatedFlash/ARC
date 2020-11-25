@@ -10,7 +10,7 @@
  *** Note: NES controller works at 3.3 or 5V, 8bitdo retro reciecer works at 5V only ***
  * 
  */
- 
+
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
@@ -22,15 +22,12 @@
     int clockWire;
     
   public:
-    Controller(int latchWire, int clockWire, int dataWire);
+    Controller(int latchWire,int clockWire,int dataWire);
     byte getData();
  };
 
-
-// Implementation
-
 // Constructor
-Controller::Controller(int latchWire, int clockWire, int dataWire) {
+Controller::Controller(int latchWire,int clockWire,int dataWire) {
   this->latchWire = latchWire;
   this->clockWire = clockWire;
   this->dataWire = dataWire;
@@ -52,7 +49,7 @@ byte Controller::getData() {
   delay(1);
 // Repeat 8 times to read each button
   for(int i = 0; i < 8; i++) {
-    // Shift the data left
+    // Shift the data right
     data = data >> 1;
     
     // Read button value, switch to non inverted signal format

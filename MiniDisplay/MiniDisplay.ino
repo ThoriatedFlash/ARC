@@ -63,7 +63,7 @@ int getKey(int buttonPressed) {
 }
 
 void setup() {
-  Serial.begin(57600);
+  Serial.begin(115200);
   Serial.setTimeout(50);
   while(!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x32
     Serial.println(F("SSD1306 allocation failed"));
@@ -73,11 +73,10 @@ void setup() {
   oled.setCursor(0,0);
   oled.setTextSize(1);
   oled.setTextColor(WHITE);
-  oled.println("1306 OLED");
-  oled.println("Test program");
+  oled.println("Autonomous Remote ");
+  oled.println("Control v0.1a");
   oled.println("by Isaiah Knorr");
   oled.println("iknorr@asu.edu");
-   oled.println("iknorr@asu.edu");
   oled.display();
   delay(3000);
 }
@@ -141,8 +140,8 @@ void loop() {
             oled.setTextColor(BLACK, WHITE);
           else
             oled.setTextColor(WHITE);
-          oled.println("  Team 9  ");
-          oled.println("  Rocks!  ");
+          oled.println("  Project  ");
+          oled.println("    ARC    ");
           oled.display();
           delay(100);
         }
@@ -157,10 +156,9 @@ void loop() {
   else {
     if(Serial.available()) oled.clearDisplay();
     oled.setCursor(0,0);
-    oled.setTextSize(2);
+    oled.setTextSize(1);
     while(Serial.available()) { 
       oled.println(Serial.readString());
-      //delay(250);
     }
   }
   oled.display();
